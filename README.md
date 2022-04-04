@@ -11,3 +11,9 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
  request :
    - Method : POST
    - Endpoint : api/produk
+Request :
+  - Method : POST
+  - Endpoint : /api/product
+  - Header : 
+      - Content-Type: application/json
+      - Accept: application/json
