@@ -8,7 +8,7 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
 5. pengiriman
 
 
-# Menambah product
+# Menambah produk
 Request:
   - Method : POST
   - Endpoint : /api/produk
@@ -42,10 +42,10 @@ Request:
                     }
           }
           
- # Mengubah daftar product
+ # Mengubah daftar produk
 Request:
   - Method : PUT
-  - Endpoint : /api/ubah-portofolio/{id}
+  - Endpoint : /api/ubah-produk/{id}
   - Header :
     
           Content-Type: application/json
@@ -54,18 +54,14 @@ Request:
   - Body :
   
         {
-            "jenis" : "string",
-            "judul" : "string",
-            "problem" : "string",
-            "solusi" : "string",
-            "fitur" : "text",
-            "metode" : "string",
-            "tahun" : "string",
-            "foto" : "string",
-            "created_at" : "timestamp",
-            "updated_at" : "timestamp",
-            "slug"  : "string"
+             
+          "nama" : "string",
+          "harga" : "long",
+          "stok" : "integer",
+          "gambar" : "string",
+          
         }
+        
         
    - Response:
    
@@ -73,18 +69,27 @@ Request:
               code : "number"
               status : "string"
               data : {
-                      "id" : "bigint, primary, auto-increment",
-                      "jenis" : "string",
-                      "judul" : "string",
-                      "problem" : "string",
-                      "solusi" : "string",
-                      "fitur" : "text",
-                      "metode" : "string",
-                      "tahun" : "string",
-                      "foto" : "string",
+                      "nama" : "string",
+                      "harga" : "long",
+                      "stok" : "integer",
+                      "gambar" : "string",
                       "created_at" : "timestamp",
                       "updated_at" : "timestamp",
-                      "slug"  : "string"
                     }
           }
-
+          
+# Menghapus data produk
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-produk/{id}
+  - Header :
+    
+          Content-Type: application/json
+          
+   - Respone:
+   
+    {
+        code : "number",
+        status : "string",
+        pesan : "string"
+    }
