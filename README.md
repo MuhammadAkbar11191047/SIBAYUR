@@ -7,20 +7,11 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
 4. pembayaran
 5. pengiriman
 
-#produk 
-Request :
-  - Method : POST
-  - Endpoint : /api/product
-  - Header : 
-      - Content-Type: application/json
-      - Accept: application/json
 
-
-
-# Menambah data Portofolio
+# Menambah product
 Request:
   - Method : POST
-  - Endpoint : /api/tambah-portofolio
+  - Endpoint : /api/produk
   - Header :
   
           Content-Type: application/json
@@ -29,41 +20,29 @@ Request:
   - Body :
   
         {
-          "jenis" : "string",
-          "judul" : "string",
-          "problem" : "string",
-          "solusi" : "string",
-          "fitur" : "text",
-          "metode" : "string",
-          "tahun" : "string",
-          "foto" : "string",
-          "created_at" : "timestamp",
-          "updated_at" : "timestamp",
-          "slug"  : "string"
+          "nama" : "string",
+          "harga" : "long",
+          "stok" : "integer",
+          "gambar" : "string",
+          
         }
         
-   - Respone:
+   - Response:
    
          {
               code : "number"
               status : "string"
               data : {
-                      "id" : "bigint, primary, auto-increment",
-                      "jenis" : "string",
-                      "judul" : "string",
-                      "problem" : "string",
-                      "solusi" : "string",
-                      "fitur" : "text",
-                      "metode" : "string",
-                      "tahun" : "string",
-                      "foto" : "string",
+                      "nama" : "string",
+                      "harga" : "long",
+                      "stok" : "integer",
+                      "gambar" : "string",
                       "created_at" : "timestamp",
                       "updated_at" : "timestamp",
-                      "slug"  : "string"
                     }
           }
           
- # Mengubah data Portofolio
+ # Mengubah daftar product
 Request:
   - Method : PUT
   - Endpoint : /api/ubah-portofolio/{id}
@@ -88,7 +67,7 @@ Request:
             "slug"  : "string"
         }
         
-   - Respone:
+   - Response:
    
           {
               code : "number"
