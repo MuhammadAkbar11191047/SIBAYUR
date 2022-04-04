@@ -6,3 +6,8 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
 3. transaksi
 4. pembayaran
 5. pengiriman
+
+#produk 
+request :
+  - Method : POST
+  - Endpoint : api/produk
