@@ -8,6 +8,6 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
 5. pengiriman
 
 #produk 
-  request :
-    - Method : POST
-    - Endpoint : api/produk
+ request :
+   - Method : POST
+   - Endpoint : api/produk
