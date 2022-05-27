@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProdukController;
+use App\http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +17,21 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
 });
 
-Route::get('lihat-produk', 'ProdukController@ProdukIndex')->name('produk.index');
-Route::get('lihat-produk/{id}', 'ProdukController@ProdukData')->name('produk.id');
-Route::post('tambah-produk', 'ProdukController@ProdukStore')->name('produk.store');
-Route::put('edit-produk/{id}',  'ProdukController@ProdukEdit')->name('produk.edit');
-Route::delete('hapus-produk/{id}',  'ProdukController@ProdukDelete')->name('produk.delete');
+Route::get('/produks', [ProdukController::class, 'ProdukIndex']);
+Route::get('/produk/{id}', [ProdukController::class, 'ProdukData']);
+Route::post('/tambah-produk', [ProdukController::class, 'ProdukStore']);
+Route::put('/produk-edit/{id}',[ProdukController::class, 'ProdukEdit']);
+Route::delete('/produkDelete/{id}', [ProdukController::class,'ProdukDelete']); 
+
+Route::get('/user', [UserController::class, 'UserIndex']);
+Route::get('/users/{id}', [UserController::class, 'UserData']);
+Route::post('/tambah-user', [UserController::class, 'UserStore']);
+Route::put('/edit-user/{id}', [UserController::class, 'UserEdit'] );
+Route::delete('/userDelete/{id}', [UserController::class, 'UserDelete']);
