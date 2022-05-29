@@ -2,7 +2,7 @@
 Tugas Mata Kuliah pengembangan aplikasi berbasis web
 # Modul
 1. produk
-2. kategori
+2. user
 3. transaksi
 4. pembayaran
 5. pengiriman
@@ -20,10 +20,10 @@ Request:
   - Body :
   
         {
-          "nama" : "string",
-          "harga" : "long",
-          "stok" : "integer",
-          "gambar" : "string",
+          "nama" : "varchar",
+          "harga" : "varchar",
+          "jumlah" : "bigint",
+          "gambar" : "varchar",
           
         }
         
@@ -33,10 +33,11 @@ Request:
               code : "number"
               status : "string"
               data : {
-                      "nama" : "string",
-                      "harga" : "long",
-                      "stok" : "integer",
-                      "gambar" : "string",
+                      "id"  : "bigint",
+                      "nama" : "varchar ",
+                      "harga" : "varchar",
+                      "jumlah" : "bigint",
+                      "gambar" : "varchar",
                       "created_at" : "timestamp",
                       "updated_at" : "timestamp",
                     }
@@ -55,10 +56,10 @@ Request:
   
         {
              
-          "nama" : "string",
-          "harga" : "long",
-          "stok" : "integer",
-          "gambar" : "string",
+          "nama" : "varchar",
+          "harga" : "varchar",
+          "stok" : "bigint",
+          "gambar" : "varchar",
           
         }
         
@@ -69,10 +70,11 @@ Request:
               code : "number"
               status : "string"
               data : {
-                      "nama" : "string",
-                      "harga" : "long",
-                      "stok" : "integer",
-                      "gambar" : "string",
+                      "id"  : "bigint"
+                      "nama" : "varchar",
+                      "harga" : "varchar",
+                      "jumlah" : "bigint",
+                      "gambar" : "varchar",
                       "created_at" : "timestamp",
                       "updated_at" : "timestamp",
                     }
@@ -93,3 +95,91 @@ Request:
         status : "string",
         pesan : "string"
     }
+    
+
+# Menambah user
+Request:
+  - Method : POST
+  - Endpoint : /api/user
+  - Header :
+  
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+          "name" : "varchar",
+          "email" : "varchar",
+          "password" : "varchar ",
+          
+        }
+        
+   - Response:
+   
+         {
+              code : "number"
+              status : "string"
+              data : {
+                      "id"  : "bigint",
+                      "name" : "varchar ",
+                      "email" : "varchar",
+                      "password" : "varchar",
+                      "created_at" : "timestamp",
+                      "updated_at" : "timestamp",
+                    }
+          }
+          
+ # Mengubah daftar produk
+Request:
+  - Method : PUT
+  - Endpoint : /api/ubah-user/{id}
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+             
+         "name" : "varchar",
+          "email" : "varchar",
+          "password" : "varchar ",
+          
+        }
+        
+        
+   - Response:
+   
+          {
+              code : "number"
+              status : "string"
+              data : {
+                     "id"  : "bigint",
+                      "name" : "varchar ",
+                      "email" : "varchar",
+                      "password" : "varchar",
+                      "created_at" : "timestamp",
+                      "updated_at" : "timestamp",
+                    }
+          }
+          
+# Menghapus data produk
+Request:
+  - Method : DELETE
+  - Endpoint : /api/hapus-user/{id}
+  - Header :
+    
+          Content-Type: application/json
+          
+   - Respone:
+   
+    {
+        code : "number",
+        status : "string",
+        pesan : "string"
+    }
+
+
+
