@@ -130,7 +130,7 @@ Request:
                     }
           }
           
- # Mengubah daftar produk
+ # Mengubah daftar user
 Request:
   - Method : PUT
   - Endpoint : /api/ubah-user/{id}
@@ -165,7 +165,7 @@ Request:
                     }
           }
           
-# Menghapus data produk
+# Menghapus data user
 Request:
   - Method : DELETE
   - Endpoint : /api/hapus-user/{id}
