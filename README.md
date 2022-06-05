@@ -15,6 +15,7 @@ Request:
   
           Content-Type: application/json
           Authorization: JWT
+          Accept: application/json
           
   - Body :
   
@@ -50,7 +51,7 @@ Request:
     
           Content-Type: application/json
           Authorization: JWT
-          
+          Accept: application/json
   - Body :
   
         {
@@ -87,6 +88,7 @@ Request:
     
           Content-Type: application/json
           Authorization: JWT
+          Accept: application/json
    - Respone:
    
     {
@@ -104,6 +106,7 @@ Request:
   
           Content-Type: application/json
           Authorization: JWT
+          Accept: application/json
           
   - Body :
   
@@ -137,6 +140,7 @@ Request:
     
           Content-Type: application/json
           Authorization: JWT
+          Accept: application/json
           
   - Body :
   
@@ -172,6 +176,7 @@ Request:
     
           Content-Type: application/json
           Authorization: JWT
+          Accept: application/json
    - Respone:
    
     {
