@@ -3,9 +3,8 @@ Tugas Mata Kuliah pengembangan aplikasi berbasis web
 # Modul
 1. produk
 2. user
-3. transaksi
-4. pembayaran
-5. pengiriman
+3. pembayaran
+4. pengiriman
 
 
 # Menambah produk
