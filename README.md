@@ -186,4 +186,91 @@ Request:
     }
 
 
+# Melalukan Login
+Request:
+  - Method : POST
+  - Endpoint : /api/login
+  - Header :
+    
+          Content-Type: application/json
+          Accept: application/json
+          
+  - Body :
+  
+        {
+          "email" : "string",
+          "password" : "string"
+        }
+        
+   - Respone:
+   
+    {
+        status : "string"
+        user : {
+                "id" : "bigint, primary, auto-increment",
+                "name" : "string",
+                "email" : "string",
+                "email_verified_at" : "timestamp",
+                "password" : "string",
+                "remember_token" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp
+              }
+         authorisation : {
+                "token" : "string",
+                "type" : "string
+              }
+    }
+
+# Logout
+Request:
+  - Method : POST
+  - Endpoint : /api/logout
+  - Header :
+    
+          Content-Type: application/json
+          Authorization: JWT
+          Accept: application/json
+        
+   - Respone:
+   
+    {
+        status : "string",
+        massage : "string"
+       
+    }
+    
+# Refresh jwt
+Request:
+  - Method : POST
+  - Endpoint : /api/refresh
+  - Header :
+    
+          Content-Type: application/json
+          Authorization: JWT
+          Accept: application/json
+        
+   - Respone:
+   
+    {
+        status : "string"
+        user : {
+                "id" : "bigint, primary, auto-increment",
+                "name" : "string",
+                "email" : "string",
+                "email_verified_at" : "timestamp",
+                "password" : "string",
+                "remember_token" : "string",
+                "created_at" : "timestamp",
+                "updated_at" : "timestamp
+              }
+         authorisation : {
+                "token" : "string",
+                "type" : "string
+              }
+       
+    }
+
+       
+    
 
